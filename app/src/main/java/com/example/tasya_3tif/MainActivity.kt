@@ -28,10 +28,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
+            /*tambahkan bagian berikut*/
+            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
             startActivity(intent)
+
             //Mengambil value dari inputNama dan menampilkan di Logcat
             val kirim = binding.inputan.text
-            // Log.e("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = $nama")
 
             Toast.makeText(this, "Pesan berhasil dikirim ke $kirim", Toast.LENGTH_SHORT).show()
             finish()
