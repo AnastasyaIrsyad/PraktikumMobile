@@ -33,6 +33,7 @@ class FifthActivity : AppCompatActivity() {
             subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.outline_arrow_back_2_24)
         }
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(this,WebViewActivity::class.java))
