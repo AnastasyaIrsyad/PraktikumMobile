@@ -15,8 +15,8 @@ import android.util.Log
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class FourthActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityFourthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        lateinit var binding: ActivityFourthBinding
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityFourthBinding.inflate(layoutInflater)

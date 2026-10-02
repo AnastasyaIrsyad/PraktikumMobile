@@ -12,6 +12,7 @@ import com.example.tasya_3tif.databinding.ActivityMainBinding
 import com.example.tasya_3tif.pertemuan_3.ThirdResultActivity
 import kotlin.jvm.java
 import com.example.tasya_3tif.pertemuan_4.FourthActivity
+import com.example.tasya_3tif.pertemuan_5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // ini burtton mengarah ke desain P4
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             /*tambahkan bagian berikut*/
@@ -39,6 +41,12 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Pesan berhasil dikirim ke $kirim", Toast.LENGTH_SHORT).show()
             finish()
+        }
+
+        // ini burtton mengarah ke desain P5
+        binding.btnToFifth.setOnClickListener {
+            val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
         }
     }
 }
