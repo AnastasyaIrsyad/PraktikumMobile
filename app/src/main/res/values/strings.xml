@@ -3,4 +3,6 @@
     <string name="verif">Masukkan nomor telepon</string>
     <string name="output">Silahkan periksa nomor telepon Anda!</string>
     <string name="succes">Nomor berhasil terkirim</string>
+    <string name="splash_slogan">Belajar Android dengan Kotlin</string>
+    <string name="splash_version">Versi 1.0</string>
 </resources>
