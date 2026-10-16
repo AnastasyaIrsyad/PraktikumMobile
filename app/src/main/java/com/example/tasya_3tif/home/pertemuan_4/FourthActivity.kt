@@ -1,4 +1,4 @@
-package com.example.tasya_3tif.pertemuan_4
+package com.example.tasya_3tif.home.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.example.tasya_3tif.MainActivity
 import android.util.Log
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.example.tasya_3tif.BaseActivity
 
 class FourthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFourthBinding
@@ -32,7 +33,7 @@ class FourthActivity : AppCompatActivity() {
         Log.w("Data Intent","Nama: $name , Usia: $age, Asal: $from")
 
         binding.btnKembali.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
             //Mengambil value dari inputNama dan menampilkan di Logcat
             val kembali = binding.btnKembali.text

@@ -8,12 +8,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.tasya_3tif.databinding.ActivityFourthBinding
 import com.example.tasya_3tif.databinding.ActivityMainBinding
-import com.example.tasya_3tif.pertemuan_3.ThirdResultActivity
 import kotlin.jvm.java
-import com.example.tasya_3tif.pertemuan_4.FourthActivity
-import com.example.tasya_3tif.pertemuan_5.FifthActivity
+import com.example.tasya_3tif.home.pertemuan_4.FourthActivity
+import com.example.tasya_3tif.home.pertemuan_5.FifthActivity
+import com.example.tasya_3tif.home.pertemuan_7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -67,6 +66,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 .setNegativeButton("Tidak") { dialog, _ -> dialog.dismiss() }
                 .show()
+        }
+        // ini burtton mengarah ke desain P7
+        binding.btnToSeventh.setOnClickListener {
+            val intent = Intent(this, SeventhActivity::class.java)
+            startActivity(intent)
         }
     }
 }

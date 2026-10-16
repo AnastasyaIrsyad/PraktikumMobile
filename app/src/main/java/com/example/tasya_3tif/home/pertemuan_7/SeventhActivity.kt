@@ -1,22 +1,21 @@
-package com.example.tasya_3tif.pertemuan_5
+package com.example.tasya_3tif.home.pertemuan_7
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tasya_3tif.R
-import com.example.tasya_3tif.databinding.ActivityWebViewBinding
+import com.example.tasya_3tif.databinding.ActivitySeventhBinding
+import androidx.fragment.app.Fragment
 
-class WebViewActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWebViewBinding
+class SeventhActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySeventhBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityWebViewBinding.inflate(layoutInflater)
+        binding = ActivitySeventhBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -30,27 +29,16 @@ class WebViewActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
-
-        binding.webView.webViewClient = WebViewClient()
-        binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://merdeka.com")
-
-        // Agar Toolbar hide/show saat scroll web
-        binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
-            if (scrollY > oldScrollY) {
-                binding.appBarLayout.setExpanded(false, true) // sembunyikan
-            } else if (scrollY < oldScrollY) {
-                binding.appBarLayout.setExpanded(true, true) // tampilkan
-            }
+        binding.btnFragment1.setOnClickListener {
+            replaceFragment(SatuFragment())
         }
-    }
 
-    //Mengaktifkan tombol back pada toolbar
-    override fun onBackPressed() {
-        if (binding.webView.canGoBack()) {
-            binding.webView.goBack() // Kembali ke halaman sebelumnya
-        } else {
-            super.onBackPressed() // Keluar dari aplikasi
+        binding.btnFragment2.setOnClickListener {
+            replaceFragment(DuaFragment())
+        }
+
+        binding.btnFragment3.setOnClickListener {
+            replaceFragment(TigaFragment())
         }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -62,5 +50,11 @@ class WebViewActivity : AppCompatActivity() {
 
             else -> super.onOptionsItemSelected(item)
         }
+    }
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

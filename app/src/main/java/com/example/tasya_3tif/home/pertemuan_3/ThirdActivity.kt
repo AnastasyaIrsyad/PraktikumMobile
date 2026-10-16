@@ -1,10 +1,6 @@
-package com.example.tasya_3tif.pertemuan_3
+package com.example.tasya_3tif.home.pertemuan_3
 
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity

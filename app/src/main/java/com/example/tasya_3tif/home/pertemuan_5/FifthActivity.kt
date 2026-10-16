@@ -1,4 +1,4 @@
-package com.example.tasya_3tif.pertemuan_5
+package com.example.tasya_3tif.home.pertemuan_5
 
 import android.content.Intent
 import android.os.Bundle
