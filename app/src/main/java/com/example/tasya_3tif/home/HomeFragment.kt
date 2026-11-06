@@ -14,8 +14,10 @@ import com.example.tasya_3tif.databinding.FragmentHomeBinding
 import com.example.tasya_3tif.home.pertemuan_4.FourthActivity
 import com.example.tasya_3tif.home.pertemuan_5.FifthActivity
 import com.example.tasya_3tif.home.pertemuan_7.SeventhActivity
+import com.example.tasya_3tif.home.pertemuan_10.TenthActivity
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tasya_3tif.AuthActivity
+
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -79,6 +81,10 @@ class HomeFragment : Fragment() {
         // ini burtton mengarah ke desain P7
         binding.btnToSeventh.setOnClickListener {
             val intent = Intent(requireContext(), SeventhActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToTenth.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
     }

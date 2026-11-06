@@ -6,6 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.HomeFragment">
 
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -22,58 +31,83 @@
         android:id="@+id/inputan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="112dp"
         android:backgroundTint="@color/black"
         android:fontFamily="@font/chewy"
         android:text="Selamat Datang"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnToFourth"
-        android:layout_width="wrap_content"
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="kirim ke pertemuan 4"
+        android:layout_marginTop="36dp"
+        android:padding="16dp"
+        app:columnCount="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputan" />
+        app:layout_constraintTop_toBottomOf="@+id/inputan"
+        app:useDefaultMargins="true">
 
-    <Button
-        android:id="@+id/btnToFifth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Masuk pertemuan 5"
-        android:backgroundTint="#226B8E"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToFourth" />
+        <Button
+            android:id="@+id/btnToFourth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pertemuan 4"
+            app:layout_columnWeight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/btnToFifth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#226B8E"
+            android:text="Pertemuan 5"
+            app:layout_columnWeight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/btnToSeventh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#DC477F"
+            android:text="Pertemuan 7"
+            app:layout_columnWeight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_gravity="fill_horizontal" />
+
+        <Button
+            android:id="@+id/btnToTenth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F45322"
+            android:text="Pertemuan 10"
+            app:layout_columnWeight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_gravity="fill_horizontal" />
+    </androidx.gridlayout.widget.GridLayout>
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="232dp"
         android:backgroundTint="#B3334A"
         android:text="logout"
+        app:layout_columnWeight="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToSeventh" />
-
-    <Button
-        android:id="@+id/btnToSeventh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="#DC477F"
-        android:text="Pertemuan 7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToFifth" />
+        app:layout_constraintTop_toBottomOf="@+id/inputan"
+        app:layout_gravity="fill_horizontal" />
 </androidx.constraintlayout.widget.ConstraintLayout>
